@@ -2,7 +2,7 @@
   <view class="page-title">猫咪图鉴</view>
   <view class="card-list">
     <block wx:for="{{cats}}" wx:key="id">
-      <cat-card cat="{{item}}" owned="{{ownedMap[item.id]}}" />
+      <cat-card cat="{{item}}" owned="{{item.owned}}" />
     </block>
   </view>
 </view>

@@ -1,15 +1,24 @@
-const { ensureSaveData } = require('../../utils/storage');
+const { ensureSaveData, defaultSaveData } = require('../../utils/storage');
 const { furniture } = require('../../data/items');
 const { houseLevels } = require('../../data/levels');
 
+function getCurrentLevelName(level) {
+  const currentLevel = houseLevels.find((item) => item.level === level) || houseLevels[0];
+  return currentLevel.name;
+}
+
 Page({
   data: {
-    saveData: null,
+    saveData: defaultSaveData,
     furniture,
-    houseLevels
+    currentLevelName: getCurrentLevelName(defaultSaveData.house.level)
   },
 
   onShow() {
-    this.setData({ saveData: ensureSaveData() });
+    const saveData = ensureSaveData();
+    this.setData({
+      saveData,
+      currentLevelName: getCurrentLevelName(saveData.house.level)
+    });
   }
 });

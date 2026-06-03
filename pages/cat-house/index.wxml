@@ -2,7 +2,7 @@
   <view class="page-title">猫屋建设</view>
   <view class="level-panel soft-panel">
     <text>当前等级：Lv.{{saveData.house.level}}</text>
-    <text>{{houseLevels[saveData.house.level - 1].name}}</text>
+    <text>{{currentLevelName}}</text>
   </view>
 
   <view class="list">

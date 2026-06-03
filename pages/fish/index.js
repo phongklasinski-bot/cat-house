@@ -1,18 +1,25 @@
 const fish = require('../../data/fish');
 const { ensureSaveData } = require('../../utils/storage');
 
+function buildFishList(saveData) {
+  return fish.map((item) => {
+    const unlocked = saveData.fish.unlocked.indexOf(item.id) !== -1;
+    return {
+      ...item,
+      unlocked,
+      cardClass: unlocked ? 'fish-card' : 'fish-card locked',
+      displayDescription: unlocked ? item.description : '尚未钓到'
+    };
+  });
+}
+
 Page({
   data: {
-    fish,
-    unlockedMap: {}
+    fish: []
   },
 
   onShow() {
     const saveData = ensureSaveData();
-    const unlockedMap = saveData.fish.unlocked.reduce((map, id) => {
-      map[id] = true;
-      return map;
-    }, {});
-    this.setData({ unlockedMap });
+    this.setData({ fish: buildFishList(saveData) });
   }
 });

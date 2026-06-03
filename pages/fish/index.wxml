@@ -2,11 +2,11 @@
   <view class="page-title">鱼类图鉴</view>
   <view class="fish-list">
     <block wx:for="{{fish}}" wx:key="id">
-      <view class="fish-card {{unlockedMap[item.id] ? '' : 'locked'}}">
+      <view class="{{item.cardClass}}">
         <view class="fish-icon">🐟</view>
         <view class="fish-copy">
           <text class="name">{{item.name}}</text>
-          <text class="desc">{{unlockedMap[item.id] ? item.description : '尚未钓到'}}</text>
+          <text class="desc">{{item.displayDescription}}</text>
         </view>
       </view>
     </block>

@@ -19,7 +19,7 @@
   <view class="section-title">小游戏</view>
   <view class="entry-list">
     <block wx:for="{{gameEntries}}" wx:key="id">
-      <view data-entry="{{item}}" bindtap="openGame">
+      <view data-index="{{index}}" bindtap="openGame">
         <game-entry title="{{item.title}}" subtitle="{{item.subtitle}}" icon="{{item.icon}}" disabled="{{item.disabled}}" />
       </view>
     </block>

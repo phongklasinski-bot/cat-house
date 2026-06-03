@@ -1,11 +1,11 @@
-const { ensureSaveData } = require('../../utils/storage');
+const { ensureSaveData, defaultSaveData } = require('../../utils/storage');
 const { pick } = require('../../utils/random');
 const cats = require('../../data/cats');
 
 Page({
   data: {
-    saveData: null,
-    activeCat: null,
+    saveData: defaultSaveData,
+    activeCat: cats[0],
     catLine: '今天也要把猫屋变得更舒服。',
     gameEntries: [
       {
@@ -53,11 +53,14 @@ Page({
   },
 
   openGame(event) {
-    const entry = event.currentTarget.dataset.entry;
+    const index = Number(event.currentTarget.dataset.index);
+    const entry = this.data.gameEntries[index];
+
     if (!entry || entry.disabled || !entry.url) {
       wx.showToast({ title: '即将开放', icon: 'none' });
       return;
     }
+
     wx.navigateTo({ url: entry.url });
   },
 

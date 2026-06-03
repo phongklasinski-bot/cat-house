@@ -1,18 +1,20 @@
 const cats = require('../../data/cats');
 const { ensureSaveData } = require('../../utils/storage');
 
+function buildCatList(saveData) {
+  return cats.map((cat) => ({
+    ...cat,
+    owned: saveData.cats.owned.indexOf(cat.id) !== -1
+  }));
+}
+
 Page({
   data: {
-    cats,
-    ownedMap: {}
+    cats: []
   },
 
   onShow() {
     const saveData = ensureSaveData();
-    const ownedMap = saveData.cats.owned.reduce((map, id) => {
-      map[id] = true;
-      return map;
-    }, {});
-    this.setData({ ownedMap });
+    this.setData({ cats: buildCatList(saveData) });
   }
 });
