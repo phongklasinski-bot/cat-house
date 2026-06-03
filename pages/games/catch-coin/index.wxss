@@ -1,0 +1,132 @@
+.game-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24rpx 32rpx 34rpx;
+  background: linear-gradient(180deg, #bce9ff 0%, #fff4d8 58%, #bde4b1 100%);
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rpx;
+  margin-bottom: 22rpx;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 92rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 22rpx;
+  color: #4b3621;
+  font-size: 24rpx;
+  font-weight: 800;
+  background: #fffdf6;
+}
+
+.game-field {
+  position: relative;
+  width: 686rpx;
+  height: 760rpx;
+  overflow: hidden;
+  border: 5rpx solid #6d4a2e;
+  border-radius: 28rpx;
+  background: linear-gradient(180deg, #d9f3ff 0%, #fff8d9 72%, #8fd17d 73%, #76bd68 100%);
+  box-shadow: 0 10rpx 0 rgba(109, 74, 46, 0.2);
+}
+
+.drop-item {
+  position: absolute;
+  width: 64rpx;
+  height: 64rpx;
+  font-size: 50rpx;
+  line-height: 64rpx;
+  text-align: center;
+}
+
+.bigCoin {
+  font-size: 56rpx;
+}
+
+.yarn {
+  font-size: 52rpx;
+}
+
+.catcher {
+  position: absolute;
+  bottom: 18rpx;
+  width: 112rpx;
+  height: 112rpx;
+  font-size: 92rpx;
+  line-height: 112rpx;
+  text-align: center;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+  margin-top: 26rpx;
+}
+
+.control-button {
+  height: 108rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 30rpx;
+  color: #4b3621;
+  font-size: 54rpx;
+  font-weight: 900;
+  background: #fffdf6;
+  box-shadow: 0 8rpx 0 rgba(109, 74, 46, 0.2);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(75, 54, 33, 0.22);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  width: 500rpx;
+  box-sizing: border-box;
+  padding: 34rpx;
+  border: 5rpx solid #6d4a2e;
+  border-radius: 28rpx;
+  background: #fffdf6;
+}
+
+.dialog-title {
+  color: #4b3621;
+  font-size: 38rpx;
+  font-weight: 900;
+  text-align: center;
+}
+
+.dialog-copy {
+  color: #7b5c3a;
+  font-size: 27rpx;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.ghost-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 40rpx;
+  color: #4b3621;
+  font-size: 28rpx;
+  font-weight: 800;
+  background: #ffffff;
+}

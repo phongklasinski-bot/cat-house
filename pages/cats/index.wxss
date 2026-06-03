@@ -1,0 +1,16 @@
+.cats-page {
+  background: #fff8ea;
+}
+
+.page-title {
+  margin-bottom: 22rpx;
+  color: #4b3621;
+  font-size: 42rpx;
+  font-weight: 900;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}

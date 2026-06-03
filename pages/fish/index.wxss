@@ -1,0 +1,49 @@
+.fish-page {
+  background: #fff8ea;
+}
+
+.page-title {
+  margin-bottom: 22rpx;
+  color: #4b3621;
+  font-size: 42rpx;
+  font-weight: 900;
+}
+
+.fish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.fish-card {
+  display: flex;
+  gap: 20rpx;
+  padding: 24rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 24rpx;
+  background: #fffdf6;
+}
+
+.fish-icon {
+  font-size: 54rpx;
+}
+
+.fish-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.desc {
+  color: #7b5c3a;
+  font-size: 24rpx;
+}
+
+.locked {
+  opacity: 0.56;
+}

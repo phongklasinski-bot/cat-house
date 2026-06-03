@@ -1,0 +1,36 @@
+<view class="game-page">
+  <view class="hud">
+    <view class="hud-item"><text>时间</text><text>{{timeLeft}}s</text></view>
+    <view class="hud-item"><text>得分</text><text>{{score}}</text></view>
+    <view class="hud-item"><text>金币</text><text>{{coinsEarned}}</text></view>
+  </view>
+
+  <view class="game-field" catchtouchmove="touchMove">
+    <block wx:for="{{items}}" wx:key="id">
+      <view class="drop-item {{item.type}}" style="left: {{item.x}}rpx; top: {{item.y}}rpx;">{{item.emoji}}</view>
+    </block>
+    <view class="catcher" style="left: {{catX}}rpx;">🐈</view>
+
+    <view wx:if="{{status === 'ready'}}" class="overlay">
+      <view class="dialog">
+        <text class="dialog-title">猫猫接金币</text>
+        <text class="dialog-copy">移动猫咪接住金币，避开毛线团。</text>
+        <button class="primary-button" bindtap="startGame">开始游戏</button>
+      </view>
+    </view>
+
+    <view wx:if="{{status === 'finished'}}" class="overlay">
+      <view class="dialog">
+        <text class="dialog-title">结算</text>
+        <text class="dialog-copy">得分 {{result.score}}，获得 {{result.coinsEarned}} 金币</text>
+        <button class="primary-button" bindtap="startGame">再玩一次</button>
+        <button class="ghost-button" bindtap="goHome">返回猫屋</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="controls">
+    <button class="control-button" bindtouchstart="moveLeft">←</button>
+    <button class="control-button" bindtouchstart="moveRight">→</button>
+  </view>
+</view>

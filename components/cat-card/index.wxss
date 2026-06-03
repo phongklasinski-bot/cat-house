@@ -1,0 +1,45 @@
+.cat-card {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  min-height: 132rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 24rpx;
+  background: #fffdf6;
+}
+
+.cat-face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 42rpx;
+  background: #ffe1a3;
+  font-size: 46rpx;
+}
+
+.cat-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.cat-name {
+  color: #4b3621;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.cat-desc {
+  color: #8c6a46;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.locked {
+  opacity: 0.56;
+}

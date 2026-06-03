@@ -1,0 +1,33 @@
+<view class="safe-page home-page">
+  <view class="top-row">
+    <view>
+      <text class="eyebrow">Cat House</text>
+      <text class="title">猫猫小屋</text>
+    </view>
+    <resource-bar coins="{{saveData.player.coins}}" fish-snacks="{{saveData.player.fishSnacks}}" stamina="{{saveData.player.stamina}}" />
+  </view>
+
+  <view class="house-scene soft-panel">
+    <view class="window"></view>
+    <button class="cat-stage" bindtap="tapCat">
+      <view class="cat-shadow"></view>
+      <view class="cat-body">🐈</view>
+    </button>
+    <view class="speech">{{activeCat.name}}：{{catLine}}</view>
+  </view>
+
+  <view class="section-title">小游戏</view>
+  <view class="entry-list">
+    <block wx:for="{{gameEntries}}" wx:key="id">
+      <view data-entry="{{item}}" bindtap="openGame">
+        <game-entry title="{{item.title}}" subtitle="{{item.subtitle}}" icon="{{item.icon}}" disabled="{{item.disabled}}" />
+      </view>
+    </block>
+  </view>
+
+  <view class="action-grid">
+    <button class="nav-tile" bindtap="goHouse"><text>🏠</text><text>猫屋建设</text></button>
+    <button class="nav-tile" bindtap="goCats"><text>🐱</text><text>猫咪图鉴</text></button>
+    <button class="nav-tile" bindtap="goFish"><text>🐟</text><text>鱼类图鉴</text></button>
+  </view>
+</view>

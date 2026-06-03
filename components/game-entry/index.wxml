@@ -1,0 +1,8 @@
+<button class="game-entry {{disabled ? 'is-disabled' : ''}}" bindtap="handleTap">
+  <text class="entry-icon">{{icon}}</text>
+  <view class="entry-copy">
+    <text class="entry-title">{{title}}</text>
+    <text class="entry-subtitle">{{subtitle}}</text>
+  </view>
+  <text class="entry-arrow">›</text>
+</button>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "猫屋",
+  "usingComponents": {
+    "resource-bar": "/components/resource-bar/index",
+    "game-entry": "/components/game-entry/index"
+  }
+}

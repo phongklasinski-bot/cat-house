@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "猫咪图鉴",
+  "usingComponents": {
+    "cat-card": "/components/cat-card/index"
+  }
+}

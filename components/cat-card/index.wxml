@@ -1,0 +1,7 @@
+<view class="cat-card {{owned ? '' : 'locked'}}">
+  <view class="cat-face">🐱</view>
+  <view class="cat-info">
+    <text class="cat-name">{{cat.name}}</text>
+    <text class="cat-desc">{{owned ? cat.description : '尚未解锁'}}</text>
+  </view>
+</view>

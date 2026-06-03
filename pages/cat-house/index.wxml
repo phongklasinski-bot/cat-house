@@ -1,0 +1,20 @@
+<view class="safe-page build-page">
+  <view class="page-title">猫屋建设</view>
+  <view class="level-panel soft-panel">
+    <text>当前等级：Lv.{{saveData.house.level}}</text>
+    <text>{{houseLevels[saveData.house.level - 1].name}}</text>
+  </view>
+
+  <view class="list">
+    <block wx:for="{{furniture}}" wx:key="id">
+      <view class="furniture-card">
+        <view class="furniture-icon">🏠</view>
+        <view class="furniture-copy">
+          <text class="name">{{item.name}}</text>
+          <text class="desc">{{item.description}}</text>
+          <text class="price">{{item.price}} 金币</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+.build-page {
+  background: #fff8ea;
+}
+
+.page-title {
+  margin-bottom: 22rpx;
+  color: #4b3621;
+  font-size: 42rpx;
+  font-weight: 900;
+}
+
+.level-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  padding: 28rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-top: 26rpx;
+}
+
+.furniture-card {
+  display: flex;
+  gap: 20rpx;
+  padding: 24rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 24rpx;
+  background: #fffdf6;
+}
+
+.furniture-icon {
+  font-size: 54rpx;
+}
+
+.furniture-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.desc,
+.price {
+  color: #7b5c3a;
+  font-size: 24rpx;
+}

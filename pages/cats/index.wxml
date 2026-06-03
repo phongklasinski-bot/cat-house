@@ -1,0 +1,8 @@
+<view class="safe-page cats-page">
+  <view class="page-title">猫咪图鉴</view>
+  <view class="card-list">
+    <block wx:for="{{cats}}" wx:key="id">
+      <cat-card cat="{{item}}" owned="{{ownedMap[item.id]}}" />
+    </block>
+  </view>
+</view>

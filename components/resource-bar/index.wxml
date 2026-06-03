@@ -1,0 +1,5 @@
+<view class="resource-bar">
+  <view class="resource-item"><text class="icon">🪙</text><text>{{coins}}</text></view>
+  <view class="resource-item"><text class="icon">🐟</text><text>{{fishSnacks}}</text></view>
+  <view class="resource-item"><text class="icon">❤</text><text>{{stamina}}</text></view>
+</view>

@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/games/catch-coin/index",
+    "pages/cat-house/index",
+    "pages/cats/index",
+    "pages/fish/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "Cat House",
+    "navigationBarBackgroundColor": "#fff4d8",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fffaf0",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
