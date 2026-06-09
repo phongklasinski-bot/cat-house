@@ -48,60 +48,13 @@
   background: #bce9ff;
 }
 
-.home-furniture {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 86rpx;
-  min-height: 72rpx;
-  box-sizing: border-box;
-  padding: 7rpx 10rpx;
-  border: 3rpx solid rgba(109, 74, 46, 0.45);
-  border-radius: 16rpx;
-  background: rgba(255, 253, 246, 0.78);
-}
-
-.home-furniture-icon {
-  font-size: 43rpx;
-}
-
-.home-furniture-name {
-  margin-top: 2rpx;
-  color: #5a3d24;
-  font-size: 18rpx;
-  font-weight: 800;
-}
-
-.home-furniture-cat_bed {
-  left: 28rpx;
-  bottom: 18rpx;
-}
-
-.home-furniture-scratching_board {
-  left: 244rpx;
-  bottom: 22rpx;
-}
-
-.home-furniture-house_window {
-  top: 50rpx;
-  right: 82rpx;
-}
-
-.home-furniture-cat_tree {
-  right: 24rpx;
-  bottom: 18rpx;
-}
-
 .cat-stage {
   position: absolute;
-  left: 70rpx;
-  bottom: 82rpx;
-  z-index: 3;
-  width: 240rpx;
-  height: 210rpx;
+  left: 34rpx;
+  bottom: 40rpx;
+  z-index: 2;
+  width: 220rpx;
+  height: 190rpx;
 }
 
 .cat-shadow {
@@ -119,24 +72,57 @@
   left: 0;
   right: 0;
   bottom: 18rpx;
-  font-size: 150rpx;
+  font-size: 138rpx;
   text-align: center;
+}
+
+.furniture-stage {
+  position: absolute;
+  right: 28rpx;
+  bottom: 24rpx;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(2, 130rpx);
+  gap: 14rpx;
+}
+
+.placed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 112rpx;
+  border: 3rpx solid rgba(109, 74, 46, 0.5);
+  border-radius: 18rpx;
+  background: rgba(255, 253, 246, 0.88);
+}
+
+.placed-icon {
+  font-size: 46rpx;
+}
+
+.placed-name {
+  margin-top: 4rpx;
+  color: #5a3d24;
+  font-size: 20rpx;
+  font-weight: 700;
 }
 
 .speech {
   position: absolute;
-  right: 34rpx;
-  bottom: 118rpx;
-  z-index: 4;
-  width: 330rpx;
+  top: 22rpx;
+  left: 22rpx;
+  z-index: 5;
+  max-width: 340rpx;
   box-sizing: border-box;
-  padding: 22rpx;
+  padding: 18rpx 22rpx;
   border: 4rpx solid #6d4a2e;
-  border-radius: 24rpx;
+  border-radius: 22rpx;
   color: #5a3d24;
   background: #fffdf6;
-  font-size: 25rpx;
-  line-height: 1.45;
+  font-size: 24rpx;
+  line-height: 1.4;
+  box-shadow: 0 7rpx 0 rgba(109, 74, 46, 0.14);
 }
 
 .section-title {

@@ -3,6 +3,8 @@ const { pick } = require('../../utils/random');
 const { furniture } = require('../../data/items');
 const cats = require('../../data/cats');
 
+const SPEECH_DURATION = 3000;
+
 function getPurchasedFurniture(saveData) {
   const ownedFurniture = saveData.house.unlockedFurniture || [];
   return furniture.filter((item) => ownedFurniture.indexOf(item.id) !== -1);
@@ -13,6 +15,7 @@ Page({
     saveData: defaultSaveData,
     activeCat: cats[0],
     purchasedFurniture: [],
+    showSpeech: true,
     catLine: '今天也要把猫屋变得更舒服。',
     gameEntries: [
       {
@@ -43,11 +46,37 @@ Page({
     this.loadHome();
   },
 
+  onHide() {
+    this.clearSpeechTimer();
+  },
+
+  onUnload() {
+    this.clearSpeechTimer();
+  },
+
   loadHome() {
     const saveData = ensureSaveData();
     const activeCat = cats.find((cat) => cat.id === saveData.cats.activeCatId) || cats[0];
     const purchasedFurniture = getPurchasedFurniture(saveData);
-    this.setData({ saveData, activeCat, purchasedFurniture });
+    this.setData({ saveData, activeCat, purchasedFurniture, showSpeech: true });
+    this.scheduleSpeechHide();
+  },
+
+  scheduleSpeechHide() {
+    this.clearSpeechTimer();
+    this.speechTimer = setTimeout(() => {
+      this.setData({ showSpeech: false });
+    }, SPEECH_DURATION);
+  },
+
+  clearSpeechTimer() {
+    clearTimeout(this.speechTimer);
+    this.speechTimer = null;
+  },
+
+  hideSpeech() {
+    this.clearSpeechTimer();
+    this.setData({ showSpeech: false });
   },
 
   tapCat() {
@@ -57,7 +86,8 @@ Page({
       '猫屋再软一点就好了。',
       '准备好接金币啦！'
     ];
-    this.setData({ catLine: pick(lines) });
+    this.setData({ catLine: pick(lines), showSpeech: true });
+    this.scheduleSpeechHide();
   },
 
   openGame(event) {
