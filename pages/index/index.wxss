@@ -48,10 +48,58 @@
   background: #bce9ff;
 }
 
+.home-furniture {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 86rpx;
+  min-height: 72rpx;
+  box-sizing: border-box;
+  padding: 7rpx 10rpx;
+  border: 3rpx solid rgba(109, 74, 46, 0.45);
+  border-radius: 16rpx;
+  background: rgba(255, 253, 246, 0.78);
+}
+
+.home-furniture-icon {
+  font-size: 43rpx;
+}
+
+.home-furniture-name {
+  margin-top: 2rpx;
+  color: #5a3d24;
+  font-size: 18rpx;
+  font-weight: 800;
+}
+
+.home-furniture-cat_bed {
+  left: 28rpx;
+  bottom: 18rpx;
+}
+
+.home-furniture-scratching_board {
+  left: 244rpx;
+  bottom: 22rpx;
+}
+
+.home-furniture-house_window {
+  top: 50rpx;
+  right: 82rpx;
+}
+
+.home-furniture-cat_tree {
+  right: 24rpx;
+  bottom: 18rpx;
+}
+
 .cat-stage {
   position: absolute;
   left: 70rpx;
   bottom: 82rpx;
+  z-index: 3;
   width: 240rpx;
   height: 210rpx;
 }
@@ -78,7 +126,8 @@
 .speech {
   position: absolute;
   right: 34rpx;
-  bottom: 42rpx;
+  bottom: 118rpx;
+  z-index: 4;
   width: 330rpx;
   box-sizing: border-box;
   padding: 22rpx;

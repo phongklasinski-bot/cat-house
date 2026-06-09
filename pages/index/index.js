@@ -1,11 +1,18 @@
 const { ensureSaveData, defaultSaveData } = require('../../utils/storage');
 const { pick } = require('../../utils/random');
+const { furniture } = require('../../data/items');
 const cats = require('../../data/cats');
+
+function getPurchasedFurniture(saveData) {
+  const ownedFurniture = saveData.house.unlockedFurniture || [];
+  return furniture.filter((item) => ownedFurniture.indexOf(item.id) !== -1);
+}
 
 Page({
   data: {
     saveData: defaultSaveData,
     activeCat: cats[0],
+    purchasedFurniture: [],
     catLine: '今天也要把猫屋变得更舒服。',
     gameEntries: [
       {
@@ -39,7 +46,8 @@ Page({
   loadHome() {
     const saveData = ensureSaveData();
     const activeCat = cats.find((cat) => cat.id === saveData.cats.activeCatId) || cats[0];
-    this.setData({ saveData, activeCat });
+    const purchasedFurniture = getPurchasedFurniture(saveData);
+    this.setData({ saveData, activeCat, purchasedFurniture });
   },
 
   tapCat() {

@@ -9,6 +9,12 @@
 
   <view class="house-scene soft-panel">
     <view class="window"></view>
+    <block wx:for="{{purchasedFurniture}}" wx:key="id">
+      <view class="home-furniture home-furniture-{{item.id}}">
+        <text class="home-furniture-icon">{{item.icon}}</text>
+        <text class="home-furniture-name">{{item.name}}</text>
+      </view>
+    </block>
     <button class="cat-stage" bindtap="tapCat">
       <view class="cat-shadow"></view>
       <view class="cat-body">🐈</view>
