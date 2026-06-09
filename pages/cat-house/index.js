@@ -7,10 +7,14 @@ function getCurrentLevelName(level) {
   return currentLevel.name;
 }
 
+function getPurchasedFurniture(saveData) {
+  return furniture.filter((item) => saveData.house.unlockedFurniture.indexOf(item.id) !== -1);
+}
+
 Page({
   data: {
     saveData: defaultSaveData,
-    furniture,
+    purchasedFurniture: [],
     currentLevelName: getCurrentLevelName(defaultSaveData.house.level)
   },
 
@@ -18,7 +22,12 @@ Page({
     const saveData = ensureSaveData();
     this.setData({
       saveData,
+      purchasedFurniture: getPurchasedFurniture(saveData),
       currentLevelName: getCurrentLevelName(saveData.house.level)
     });
+  },
+
+  openShop() {
+    wx.navigateTo({ url: '/pages/cat-house/shop/index' });
   }
 });

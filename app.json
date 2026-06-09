@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/games/catch-coin/index",
     "pages/cat-house/index",
+    "pages/cat-house/shop/index",
     "pages/cats/index",
     "pages/fish/index"
   ],

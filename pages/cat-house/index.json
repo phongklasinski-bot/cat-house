@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "猫屋建设"
+  "navigationBarTitleText": "猫屋建设",
+  "usingComponents": {
+    "resource-bar": "/components/resource-bar/index"
+  }
 }

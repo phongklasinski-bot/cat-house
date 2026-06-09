@@ -1,4 +1,5 @@
 const { updateSaveData } = require('./storage');
+const { furniture } = require('../data/items');
 
 function addCoins(amount) {
   return updateSaveData((saveData) => {
@@ -18,7 +19,44 @@ function finishCatchCoinGame(score, coinsEarned) {
   });
 }
 
+function purchaseFurniture(furnitureId) {
+  const item = furniture.find((entry) => entry.id === furnitureId);
+  const result = {
+    success: false,
+    reason: item ? 'unknown' : 'notFound',
+    saveData: null
+  };
+
+  if (!item) {
+    return result;
+  }
+
+  result.saveData = updateSaveData((saveData) => {
+    const owned = saveData.house.unlockedFurniture.indexOf(item.id) !== -1;
+
+    if (owned) {
+      result.reason = 'owned';
+      return saveData;
+    }
+
+    if (saveData.player.coins < item.price) {
+      result.reason = 'insufficientCoins';
+      return saveData;
+    }
+
+    saveData.player.coins -= item.price;
+    saveData.house.unlockedFurniture.push(item.id);
+    saveData.house.placedFurniture.push(item.id);
+    result.success = true;
+    result.reason = 'purchased';
+    return saveData;
+  });
+
+  return result;
+}
+
 module.exports = {
   addCoins,
-  finishCatchCoinGame
+  finishCatchCoinGame,
+  purchaseFurniture
 };

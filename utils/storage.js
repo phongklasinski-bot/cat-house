@@ -10,8 +10,8 @@ const defaultSaveData = {
   },
   house: {
     level: 1,
-    unlockedFurniture: ['basic_bed'],
-    placedFurniture: ['basic_bed']
+    unlockedFurniture: [],
+    placedFurniture: []
   },
   cats: {
     owned: ['cat_001'],

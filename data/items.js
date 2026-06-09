@@ -1,21 +1,35 @@
 const furniture = [
   {
-    id: 'basic_bed',
-    name: '软软猫窝',
+    id: 'cat_bed',
+    name: '猫窝',
     type: 'bed',
-    level: 1,
-    price: 0,
-    image: '/assets/images/ui/basic_bed.png',
-    description: '第一只猫咪带来的小猫窝。'
+    price: 100,
+    icon: '🧺',
+    description: '橘小豆最喜欢的柔软休息角。'
   },
   {
-    id: 'sun_window',
-    name: '晒太阳窗台',
+    id: 'scratching_board',
+    name: '猫抓板',
+    type: 'play',
+    price: 200,
+    icon: '🪵',
+    description: '保护家具，也让猫爪保持好心情。'
+  },
+  {
+    id: 'house_window',
+    name: '窗户',
     type: 'decor',
-    level: 2,
-    price: 120,
-    image: '/assets/images/ui/sun_window.png',
-    description: '让猫屋变得更暖和。'
+    price: 300,
+    icon: '🪟',
+    description: '阳光和风景都会来到猫屋。'
+  },
+  {
+    id: 'cat_tree',
+    name: '猫爬架',
+    type: 'play',
+    price: 500,
+    icon: '🌳',
+    description: '可以攀爬、眺望和偷偷打盹。'
   }
 ];
 

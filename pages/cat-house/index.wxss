@@ -1,56 +1,189 @@
 .build-page {
-  background: #fff8ea;
+  background: linear-gradient(180deg, #fff4d8 0%, #fff8ea 45%, #eef8e9 100%);
+}
+
+.top-row,
+.section-heading,
+.furniture-row {
+  display: flex;
+  align-items: center;
+}
+
+.top-row,
+.section-heading {
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.page-title,
+.level-name {
+  display: block;
 }
 
 .page-title {
-  margin-bottom: 22rpx;
   color: #4b3621;
   font-size: 42rpx;
   font-weight: 900;
 }
 
-.level-panel {
+.level-name {
+  margin-top: 8rpx;
+  color: #9b7338;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.house-room {
+  position: relative;
+  height: 400rpx;
+  margin-top: 28rpx;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff2c9 0%, #f8ddb0 66%, #aed89d 67%, #9dcc8e 100%);
+}
+
+.room-window {
+  position: absolute;
+  top: 42rpx;
+  right: 48rpx;
+  width: 130rpx;
+  height: 105rpx;
+  border: 7rpx solid #6d4a2e;
+  border-radius: 22rpx;
+  background: #bce9ff;
+}
+
+.room-cat {
+  position: absolute;
+  left: 42rpx;
+  bottom: 36rpx;
+  z-index: 2;
+  font-size: 112rpx;
+}
+
+.furniture-stage {
+  position: absolute;
+  right: 28rpx;
+  bottom: 24rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 130rpx);
+  gap: 14rpx;
+}
+
+.placed-item {
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
-  padding: 28rpx;
-  font-size: 30rpx;
+  align-items: center;
+  justify-content: center;
+  height: 112rpx;
+  border: 3rpx solid rgba(109, 74, 46, 0.5);
+  border-radius: 18rpx;
+  background: rgba(255, 253, 246, 0.82);
+}
+
+.placed-icon {
+  font-size: 46rpx;
+}
+
+.placed-name {
+  margin-top: 4rpx;
+  color: #5a3d24;
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
+.section-heading {
+  margin: 34rpx 0 18rpx;
+  color: #4b3621;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.shop-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 66rpx;
+  padding: 0 24rpx;
+  border: 3rpx solid #6d4a2e;
+  border-radius: 33rpx;
+  color: #4b320e;
+  font-size: 24rpx;
   font-weight: 800;
+  background: #ffd66b;
+  box-shadow: 0 5rpx 0 #b87924;
 }
 
-.list {
+.empty-state {
   display: flex;
   flex-direction: column;
-  gap: 20rpx;
-  margin-top: 26rpx;
-}
-
-.furniture-card {
-  display: flex;
-  gap: 20rpx;
-  padding: 24rpx;
-  border: 4rpx solid #6d4a2e;
+  align-items: center;
+  padding: 54rpx 28rpx;
+  border: 4rpx dashed #c6a56c;
   border-radius: 24rpx;
-  background: #fffdf6;
+  background: rgba(255, 253, 246, 0.75);
 }
 
-.furniture-icon {
-  font-size: 54rpx;
+.empty-icon {
+  font-size: 64rpx;
 }
 
-.furniture-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 10rpx;
-}
-
-.name {
+.empty-title {
+  margin-top: 16rpx;
+  color: #4b3621;
   font-size: 30rpx;
   font-weight: 900;
 }
 
-.desc,
-.price {
-  color: #7b5c3a;
+.empty-copy {
+  margin-top: 10rpx;
+  color: #8c6a46;
   font-size: 24rpx;
+  text-align: center;
+}
+
+.furniture-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.furniture-row {
+  gap: 20rpx;
+  min-height: 118rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border: 4rpx solid #6d4a2e;
+  border-radius: 22rpx;
+  background: #fffdf6;
+}
+
+.furniture-icon {
+  width: 70rpx;
+  font-size: 48rpx;
+  text-align: center;
+}
+
+.furniture-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.furniture-name {
+  color: #4b3621;
+  font-size: 29rpx;
+  font-weight: 900;
+}
+
+.furniture-desc {
+  color: #8c6a46;
+  font-size: 22rpx;
+  line-height: 1.4;
+}
+
+.owned-label {
+  color: #4f8a50;
+  font-size: 22rpx;
+  font-weight: 800;
 }

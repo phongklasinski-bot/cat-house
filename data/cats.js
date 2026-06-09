@@ -1,7 +1,7 @@
 const cats = [
   {
     id: 'cat_001',
-    name: '橘宝',
+    name: '橘小豆',
     rarity: 'normal',
     image: '/assets/images/cats/cat_001.png',
     description: '喜欢金币和晒太阳的小橘猫。',
