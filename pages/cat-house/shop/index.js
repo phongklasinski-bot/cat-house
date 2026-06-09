@@ -28,16 +28,19 @@ Page({
   },
 
   buyFurniture(event) {
-    const furnitureId = event.currentTarget.dataset.id;
-    const result = purchaseFurniture(furnitureId);
+    const index = Number(event.currentTarget.dataset.index);
+    const item = this.data.shopItems[index];
+
+    if (!item) {
+      return;
+    }
+
+    const result = purchaseFurniture(item.id);
 
     if (!result.success) {
       if (result.reason === 'insufficientCoins') {
         wx.showToast({ title: '金币不足', icon: 'none' });
-        return;
-      }
-
-      if (result.reason === 'owned') {
+      } else if (result.reason === 'owned') {
         wx.showToast({ title: '已经拥有', icon: 'none' });
       }
       return;

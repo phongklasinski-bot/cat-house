@@ -32,7 +32,9 @@ function purchaseFurniture(furnitureId) {
   }
 
   result.saveData = updateSaveData((saveData) => {
-    const owned = saveData.house.unlockedFurniture.indexOf(item.id) !== -1;
+    const unlockedFurniture = saveData.house.unlockedFurniture || [];
+    const placedFurniture = saveData.house.placedFurniture || [];
+    const owned = unlockedFurniture.indexOf(item.id) !== -1;
 
     if (owned) {
       result.reason = 'owned';
@@ -45,8 +47,8 @@ function purchaseFurniture(furnitureId) {
     }
 
     saveData.player.coins -= item.price;
-    saveData.house.unlockedFurniture.push(item.id);
-    saveData.house.placedFurniture.push(item.id);
+    saveData.house.unlockedFurniture = unlockedFurniture.concat(item.id);
+    saveData.house.placedFurniture = placedFurniture.concat(item.id);
     result.success = true;
     result.reason = 'purchased';
     return saveData;

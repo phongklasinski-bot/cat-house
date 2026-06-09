@@ -21,25 +21,21 @@
   </view>
 
   <view class="section-heading">
-    <text>已购买家具</text>
+    <text>家具列表</text>
     <button class="shop-button" bindtap="openShop">家具商店</button>
   </view>
 
-  <view wx:if="{{purchasedFurniture.length === 0}}" class="empty-state">
-    <text class="empty-icon">🏠</text>
-    <text class="empty-title">猫屋还是空空的</text>
-    <text class="empty-copy">去家具商店为橘小豆添置第一件家具。</text>
-  </view>
-
-  <view wx:else class="furniture-list">
-    <block wx:for="{{purchasedFurniture}}" wx:key="id">
-      <view class="furniture-row">
+  <view class="furniture-list">
+    <block wx:for="{{furnitureCatalog}}" wx:key="id">
+      <view class="furniture-row" data-index="{{index}}" bindtap="buyFurniture">
         <text class="furniture-icon">{{item.icon}}</text>
         <view class="furniture-copy">
           <text class="furniture-name">{{item.name}}</text>
           <text class="furniture-desc">{{item.description}}</text>
+          <text class="furniture-price">🪙 {{item.price}}</text>
         </view>
-        <text class="owned-label">已拥有</text>
+        <button wx:if="{{item.owned}}" class="owned-label" disabled>已拥有</button>
+        <button wx:else class="inline-buy-button" data-index="{{index}}" catchtap="buyFurniture">购买</button>
       </view>
     </block>
   </view>
