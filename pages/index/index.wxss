@@ -55,6 +55,7 @@
   z-index: 2;
   width: 220rpx;
   height: 190rpx;
+  background: transparent;
 }
 
 .cat-shadow {
@@ -72,6 +73,7 @@
   left: 0;
   right: 0;
   bottom: 18rpx;
+  background: transparent;
   font-size: 138rpx;
   text-align: center;
 }

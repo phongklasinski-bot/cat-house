@@ -9,10 +9,10 @@
 
   <view class="house-scene soft-panel">
     <view class="window"></view>
-    <button class="cat-stage" bindtap="tapCat">
+    <view class="cat-stage" bindtap="tapCat">
       <view class="cat-shadow"></view>
       <view class="cat-body">🐈</view>
-    </button>
+    </view>
     <view class="furniture-stage">
       <block wx:for="{{purchasedFurniture}}" wx:key="id">
         <view class="placed-item">
